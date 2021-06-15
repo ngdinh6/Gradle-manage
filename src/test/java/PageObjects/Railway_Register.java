@@ -30,7 +30,7 @@ public class Railway_Register extends Railway_GeneralPage {
     }
 
     //Method
-    public Railway_HomePage login(String email, String password, String confirmPassword, String pid){
+    public Railway_HomePage register(String email, String password, String confirmPassword, String pid){
         //submit register cre
         this.getTxtEmail().sendKeys(email);
         this.getTxtPassword().sendKeys(password);

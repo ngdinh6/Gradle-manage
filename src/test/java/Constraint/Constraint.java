@@ -8,4 +8,9 @@ public class Constraint {
     public static final String USERNAME = "thanhle@logigear.com";
     public static final String PASSWORD = "12345678";
 
+
+    public static final String EMAIL = "thanhle@logigear.com";
+    public static final String RE_PASSWORD = "12345678";
+    public static final String CONFIrM_RE_PASSWORD = "12345678";
+    public static final String PID = "87654321";
 }
