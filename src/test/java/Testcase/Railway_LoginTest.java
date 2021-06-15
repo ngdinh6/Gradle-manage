@@ -15,7 +15,7 @@ public class Railway_LoginTest {
     @BeforeMethod
     public void beforeMethod(){
         System.out.println("Pre-Condition");
-        System.setProperty("webdriver.chrome.driver", Common1.getProjectPath() + "\\Executable\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SATTDN21.02.05\\Desktop\\Selenium_testing\\Gradle manage\\src\\test\\java\\Execution\\chromedriver.exe");
         Constraint.WEBDRIVER = new ChromeDriver();
         Constraint.WEBDRIVER.manage().window().maximize();;
 
