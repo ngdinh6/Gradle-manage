@@ -1,18 +1,19 @@
 package PageObjects;
+
+import Constraint.Constraint;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import Constraint.Constraint;
-public class Railway_Bookticket extends Railway_GeneralPage {
 
+public class Railway_ChangePassword {
+    //encapsulates login page
     //inherrit General page
 
     //Locators
-    private final By _selectDepartDate = By.xpath("//form/fieldset/ol//select[@name=\"Date\"]");
-    private final By _selectDepartStation = By.xpath("//form/fieldset/ol//select[@name=\"DepartStation\"]");
-    private final By _selectArriveStation = By.xpath("//form/fieldset/ol//select[@name=\"ArriveStation\"]");
-    private final By _selectSeatType = By.xpath("//form/fieldset/ol//select[@name=\"SeatType\"]");
-    private final By _selectTicketAmount = By.xpath("//form/fieldset/ol//select[@name=\"TicketAmount\"]");
-    private final By _btnSubmitBookTicket = By.xpath("//form[@method=\"post\"]/fieldset/input[@value=\"Book ticket\"]");
+    private final By _txtCurrentPass = By.xpath("//input[@id=\"currentPassword\"]");
+    private final By _txtPassword = By.xpath("//input[@id=\"newPassword\"]");
+    private final By _btnLogin = By.xpath("//*[@id=\"newPassword\"]");
+    private final By _lblLoginErrorMsg = By.xpath("//*[@id=\"ChangePW\"]/fieldset/p/input");
+
     //elements
     public WebElement getTxtUsername(){
         return Constraint.WEBDRIVER.findElement(_txtUsername);

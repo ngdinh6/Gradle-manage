@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import Common.Common1;
+
 import Constraint.Constraint;
 import org.testng.annotations.Test;
 
@@ -37,7 +37,7 @@ public class Railway_LoginTest {
         String expectedMsg = "Welcome" + Constraint.USERNAME;
         Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
     }
-    @Test
+    /*@Test
     public void TC02(){
         System.out.println("TC 01 - User can register Railway with valid email, passowrd and PID");
         Railway_HomePage homePage = new Railway_HomePage();
@@ -46,6 +46,6 @@ public class Railway_LoginTest {
         String actualMsg = registerPage..getWelcomeMessage();
         String expectedMsg = "Welcome" + Constraint.USERNAME;
         Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
-    }
+    }*/
 
 }

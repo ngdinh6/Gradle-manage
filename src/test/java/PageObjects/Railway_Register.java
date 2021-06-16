@@ -13,6 +13,7 @@ public class Railway_Register extends Railway_GeneralPage {
     private final By _txtConfirmPassword = By.xpath("//*[@id=\"confirmPassword\"]");
     private final By _txtPID = By.xpath("//*[@id=\"pid\"]");
     private final By _btnRegister = By.xpath("//*[@id=\"RegisterForm\"]/fieldset/p/input");
+    //  register success // p[text()="You're here"]
 
     //elements
     public WebElement getTxtEmail(){       return Constraint.WEBDRIVER.findElement(_txtEmail);    }

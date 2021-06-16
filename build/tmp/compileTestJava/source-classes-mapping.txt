@@ -1,11 +1,11 @@
 PageObjects/Railway_Bookticket.java
  PageObjects.Railway_Bookticket
-PageObjects/Railway_GeneralPage.java
- PageObjects.Railway_GeneralPage
+Common/Common1.java
+ Common.Common1
 PageObjects/Railway_Ticketprice.java
  PageObjects.Railway_Ticketprice
-PageObjects/Railway_Timetable.java
- PageObjects.Railway_Timetable
+Testcase/Railway_LoginTest.java
+ Testcase.Railway_LoginTest
 PageObjects/Railway_HomePage.java
  PageObjects.Railway_HomePage
 Constraint/Constraint.java
@@ -14,7 +14,7 @@ PageObjects/Railway_LoginPage.java
  PageObjects.Railway_LoginPage
 PageObjects/Railway_Register.java
  PageObjects.Railway_Register
-Common/Common1.java
- Common.Common1
-Testcase/Railway_LoginTest.java
- Testcase.Railway_LoginTest
+PageObjects/Railway_Timetable.java
+ PageObjects.Railway_Timetable
+PageObjects/Railway_GeneralPage.java
+ PageObjects.Railway_GeneralPage

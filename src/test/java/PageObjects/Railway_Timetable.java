@@ -27,7 +27,7 @@ public class Railway_Timetable extends Railway_GeneralPage {
 
     //Method
     public Railway_HomePage login(String email, String password, String confirmPassword, String pid) {
-        //navigate to Ticket Price
+        //navigate to Check Price
         this.getLinkCheckPrice().click();
         //navigate to Book Ticket
         this.getLinkBookTicket().click();
