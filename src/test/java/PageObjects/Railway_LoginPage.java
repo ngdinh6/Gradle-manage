@@ -1,5 +1,5 @@
 package PageObjects;
-import Constraint.Constraint;
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -15,26 +15,26 @@ public class Railway_LoginPage extends Railway_GeneralPage {
 
     //elements
     public WebElement getTxtUsername(){
-        return Constraint.WEBDRIVER.findElement(_txtUsername);
+        return Constant.WEBDRIVER.findElement(_txtUsername);
     }
     public WebElement getTxtPassword(){
-        return Constraint.WEBDRIVER.findElement(_txtPassword);
+        return Constant.WEBDRIVER.findElement(_txtPassword);
     }
     public WebElement getBtnLogin(){
-        return Constraint.WEBDRIVER.findElement(_btnLogin);
+        return Constant.WEBDRIVER.findElement(_btnLogin);
     }
     public WebElement getLblLoginErrorMsg(){
-        return Constraint.WEBDRIVER.findElement(_lblLoginErrorMsg);
+        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
     }
 
     //Method
-    public Railway_HomePage login(String username, String password){
-        //submit login cre
+    public Railway_LoginPage login(String username, String password){
+
         this.getTxtUsername().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
         this.getBtnLogin().click();
         //land on Home page
-        return new Railway_HomePage();
+        return new Railway_LoginPage();
     }
 
 }

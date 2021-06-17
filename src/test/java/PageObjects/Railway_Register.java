@@ -1,11 +1,10 @@
 package PageObjects;
-import Constraint.Constraint;
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class Railway_Register extends Railway_GeneralPage {
-    //encapsulates register page
-    //inherrit General page
+
 
     //Locators
     private final By _txtEmail = By.xpath("//*[@id=\"email\"]");
@@ -16,30 +15,30 @@ public class Railway_Register extends Railway_GeneralPage {
     //  register success // p[text()="You're here"]
 
     //elements
-    public WebElement getTxtEmail(){       return Constraint.WEBDRIVER.findElement(_txtEmail);    }
+    public WebElement getTxtEmail(){       return Constant.WEBDRIVER.findElement(_txtEmail);    }
     public WebElement getTxtPassword(){
-        return Constraint.WEBDRIVER.findElement(_txtPassword);
+        return Constant.WEBDRIVER.findElement(_txtPassword);
     }
     public WebElement getTxtConfirmPassword(){
-        return Constraint.WEBDRIVER.findElement(_txtConfirmPassword);
+        return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
     }
     public WebElement getTxtPID(){
-        return Constraint.WEBDRIVER.findElement(_txtPID);
+        return Constant.WEBDRIVER.findElement(_txtPID);
     }
     public WebElement getBtnRegisiter(){
-        return Constraint.WEBDRIVER.findElement(_btnRegister);
+        return Constant.WEBDRIVER.findElement(_btnRegister);
     }
 
     //Method
-    public Railway_HomePage register(String email, String password, String confirmPassword, String pid){
-        //submit register cre
+    public Railway_Register register(String email, String password, String confirmPassword, String pid){
+
         this.getTxtEmail().sendKeys(email);
         this.getTxtPassword().sendKeys(password);
         this.getTxtConfirmPassword().sendKeys(confirmPassword);
         this.getTxtPID().sendKeys(pid);
         this.getBtnRegisiter().click();
         //land on Home page
-        return new Railway_HomePage();
+        return new Railway_Register();
     }
 
 }

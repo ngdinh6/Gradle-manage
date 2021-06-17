@@ -1,7 +1,7 @@
 package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import Constraint.Constraint;
+import Constant.Constant;
 public class Railway_Bookticket extends Railway_GeneralPage {
 
     //inherrit General page
@@ -14,26 +14,32 @@ public class Railway_Bookticket extends Railway_GeneralPage {
     private final By _selectTicketAmount = By.xpath("//form/fieldset/ol//select[@name=\"TicketAmount\"]");
     private final By _btnSubmitBookTicket = By.xpath("//form[@method=\"post\"]/fieldset/input[@value=\"Book ticket\"]");
     //elements
-    public WebElement getTxtUsername(){
-        return Constraint.WEBDRIVER.findElement(_txtUsername);
+    public WebElement getSelectDepartDate(){
+        return Constant.WEBDRIVER.findElement(_selectDepartDate);
     }
-    public WebElement getTxtPassword(){
-        return Constraint.WEBDRIVER.findElement(_txtPassword);
+    public WebElement getSelectDepartStation(){
+        return Constant.WEBDRIVER.findElement(_selectDepartStation);
     }
-    public WebElement getBtnLogin(){
-        return Constraint.WEBDRIVER.findElement(_btnLogin);
+    public WebElement getSelectArriveStation(){
+        return Constant.WEBDRIVER.findElement(_selectArriveStation);
     }
-    public WebElement getLblLoginErrorMsg(){
-        return Constraint.WEBDRIVER.findElement(_lblLoginErrorMsg);
+    public WebElement getSelectSeatType(){
+        return Constant.WEBDRIVER.findElement(_selectSeatType);
+    }
+    public WebElement getSelectTicketAmount(){
+        return Constant.WEBDRIVER.findElement(_selectTicketAmount);
+    }
+    public WebElement getBtnSubmitBookTicket(){
+        return Constant.WEBDRIVER.findElement(_btnSubmitBookTicket);
     }
 
     //Method
-    public Railway_HomePage login(String username, String password){
+    /*public Railway_Bookticket bookticket(String username, String password){
         //submit login cre
-        this.getTxtUsername().sendKeys(username);
+        this.getSelectDepartDate().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
         this.getBtnLogin().click();
         //land on Home page
         return new Railway_HomePage();
-    }
+    }*/
 }

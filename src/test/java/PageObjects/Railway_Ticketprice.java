@@ -1,7 +1,7 @@
 package PageObjects;
 ;
 
-import Constraint.Constraint;
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +16,7 @@ public class Railway_Ticketprice extends Railway_GeneralPage{
 
     //elements
     public WebElement getBtnCheckPrice() {
-        return Constraint.WEBDRIVER.findElement(_btnCheckPrice);
+        return Constant.WEBDRIVER.findElement(_btnCheckPrice);
     }
 
 

@@ -1,5 +1,7 @@
 PageObjects/Railway_Bookticket.java
  PageObjects.Railway_Bookticket
+PageObjects/Railway_CheckPrice.java
+ PageObjects.Railway_CheckPrice
 Common/Common1.java
  Common.Common1
 PageObjects/Railway_Ticketprice.java

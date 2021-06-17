@@ -1,6 +1,6 @@
 package PageObjects;
 
-import Constraint.Constraint;
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -16,11 +16,11 @@ public class Railway_Timetable extends Railway_GeneralPage {
 
     //elements
     public WebElement getLinkCheckPrice() {
-        return Constraint.WEBDRIVER.findElement(_linkCheckPrice);
+        return Constant.WEBDRIVER.findElement(_linkCheckPrice);
     }
 
     public WebElement getLinkBookTicket() {
-        return Constraint.WEBDRIVER.findElement(_linkBookTicket);
+        return Constant.WEBDRIVER.findElement(_linkBookTicket);
     }
 
 

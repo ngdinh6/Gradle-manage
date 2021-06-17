@@ -1,7 +1,7 @@
 package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import Constraint.Constraint;
+import Constant.Constant;
 public class Railway_GeneralPage {
     //contains all UI and method, shared other pages
     //Locator
@@ -13,35 +13,40 @@ public class Railway_GeneralPage {
     private final By tabTicketPrice = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Ticket price\"]");
     private final By tabTimetable = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Timetable\"]");
     private final By tabContact = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Contact\"]");
+    private final By tabChangePassword = By.xpath("//ul/li[@class=\"selected\"]/a/span[text()=\"Change password\"]");
     //Elements
     protected WebElement getTabLogin(){
-        return Constraint.WEBDRIVER.findElement(tabLogin);
+        return Constant.WEBDRIVER.findElement(tabLogin);
     }
     protected WebElement getTabLogout(){
-        return Constraint.WEBDRIVER.findElement(tabLogout);
+        return Constant.WEBDRIVER.findElement(tabLogout);
     }
     protected WebElement getlblWelcomeMessage(){
-        return Constraint.WEBDRIVER.findElement(lblWelcomeMessage);
+        return Constant.WEBDRIVER.findElement(lblWelcomeMessage);
     }
     protected WebElement getTabRegister(){
-        return Constraint.WEBDRIVER.findElement(tabRegister);
+        return Constant.WEBDRIVER.findElement(tabRegister);
     }
     protected WebElement getTabBookTicket(){
-        return Constraint.WEBDRIVER.findElement(tabBookTicket);
+        return Constant.WEBDRIVER.findElement(tabBookTicket);
     }
     protected WebElement getTabTicketPrice(){
-        return Constraint.WEBDRIVER.findElement(tabTicketPrice);
+        return Constant.WEBDRIVER.findElement(tabTicketPrice);
     }
     protected WebElement getTabTimetable(){
-        return Constraint.WEBDRIVER.findElement(tabTimetable);
+        return Constant.WEBDRIVER.findElement(tabTimetable);
     }
     protected WebElement getTabContact(){
-        return Constraint.WEBDRIVER.findElement(tabContact);
+        return Constant.WEBDRIVER.findElement(tabContact);
+    }
+    protected WebElement getTabChangePassword(){
+        return Constant.WEBDRIVER.findElement(tabChangePassword);
     }
     //Methods
     public String getWelcomeMessage(){
         return this.getlblWelcomeMessage().getText();
     }
+
     public Railway_LoginPage gotoLoginPage(){
         this.getTabLogin().click();
         return new Railway_LoginPage();
@@ -61,6 +66,10 @@ public class Railway_GeneralPage {
     public Railway_Timetable gotoTimetablePage(){
         this.getTabTimetable().click();
         return new Railway_Timetable();
+    }
+    public Railway_ChangePasswordPage gotoChangePassword(){
+        this.getTabChangePassword().click();
+        return new Railway_ChangePasswordPage();
     }
 
 
