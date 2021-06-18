@@ -1,22 +1,26 @@
-PageObjects/Railway_Bookticket.java
- PageObjects.Railway_Bookticket
-PageObjects/Railway_CheckPrice.java
- PageObjects.Railway_CheckPrice
-Common/Common1.java
- Common.Common1
-PageObjects/Railway_Ticketprice.java
- PageObjects.Railway_Ticketprice
-Testcase/Railway_LoginTest.java
- Testcase.Railway_LoginTest
-PageObjects/Railway_HomePage.java
- PageObjects.Railway_HomePage
+PageObjects/Railway_RegisterPage.java
+ PageObjects.Railway_RegisterPage
+PageObjects/Railway_CheckPricePage.java
+ PageObjects.Railway_CheckPricePage
+Testcase/Railway_Exercise.java
+ Testcase.Railway_Exercise
+PageObjects/Railway_BookticketPage.java
+ PageObjects.Railway_BookticketPage
 Constraint/Constraint.java
  Constraint.Constraint
 PageObjects/Railway_LoginPage.java
  PageObjects.Railway_LoginPage
-PageObjects/Railway_Register.java
- PageObjects.Railway_Register
-PageObjects/Railway_Timetable.java
- PageObjects.Railway_Timetable
+Constant/Constant.java
+ Constant.Constant
+PageObjects/Railway_ChangePasswordPage.java
+ PageObjects.Railway_ChangePasswordPage
+Common/Common1.java
+ Common.Common1
+PageObjects/Railway_TimetablePage.java
+ PageObjects.Railway_TimetablePage
+PageObjects/Railway_HomePage.java
+ PageObjects.Railway_HomePage
+PageObjects/Railway_TicketpricePage.java
+ PageObjects.Railway_TicketpricePage
 PageObjects/Railway_GeneralPage.java
  PageObjects.Railway_GeneralPage
