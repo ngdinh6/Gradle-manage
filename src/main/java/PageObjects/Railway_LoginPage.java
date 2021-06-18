@@ -8,9 +8,9 @@ public class Railway_LoginPage extends Railway_GeneralPage {
     //inherrit General page
 
     //Locators
-    private final By _txtUsername = By.xpath("//input[@id='username']");
-    private final By _txtPassword = By.xpath("//input[@id='password']");
-    private final By _btnLogin = By.xpath("//input[@value='login']");
+    private final By _txtUsername = By.xpath("//input[@id=\"username\"]");
+    private final By _txtPassword = By.xpath("//input[@id=\"password\"]");
+    private final By _btnLogin = By.xpath("//div[@id=\"content\"]/form/fieldset/p/input[@type=\"submit\"]");
     private final By _lblLoginErrorMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error LoginForm\"]");
 
     //elements
@@ -33,7 +33,15 @@ public class Railway_LoginPage extends Railway_GeneralPage {
         this.getTxtUsername().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
         this.getBtnLogin().click();
-        //land on Home page
+
+        return new Railway_LoginPage();
+    }
+    public Railway_LoginPage loginWrongPassword(String username, String password){
+        this.getTxtUsername().sendKeys(username);
+        for (int i=1; i<4; i++){
+            this.getTxtPassword().sendKeys(password);
+            this.getBtnLogin().click();
+        }
         return new Railway_LoginPage();
     }
 
