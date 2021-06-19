@@ -1,10 +1,11 @@
 package PageObjects;
+
+import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import Constant.Constant;
+
 public class Railway_BookticketPage extends Railway_GeneralPage {
 
-    //inherrit General page
 
     //Locators
     private final By _selectDepartDate = By.xpath("//form/fieldset/ol//select[@name=\"Date\"]");
@@ -34,12 +35,17 @@ public class Railway_BookticketPage extends Railway_GeneralPage {
     }
 
     //Method
-    /*public Railway_Bookticket bookticket(String username, String password){
-        //submit login cre
-        this.getSelectDepartDate().sendKeys(username);
-        this.getTxtPassword().sendKeys(password);
-        this.getBtnLogin().click();
-        //land on Home page
-        return new Railway_HomePage();
+    /*public Railway_MyTicketPage filterTicket( String DepartDate){
+
+        Select drpDepartStation = new Select(Constant.WEBDRIVER.findElement(_selectFilterDepartStation));
+        drpDepartStation.selectByVisibleText("Sài Gòn");
+        Select drpArriveStation = new Select(Constant.WEBDRIVER.findElement(_selectFilterArriveStation));
+        drpDepartStation.selectByVisibleText("Phan Thiết");
+        this.getTxtFilterDepartDate().sendKeys(DepartDate);
+        Select drpStatus = new Select(Constant.WEBDRIVER.findElement(_selectFilterStatus));
+        drpDepartStation.selectByValue("Ignore");
+        this.btnCancelTickets().click();
+
+        return new Railway_MyTicketPage();
     }*/
 }

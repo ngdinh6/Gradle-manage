@@ -10,8 +10,8 @@ public class Railway_LoginPage extends Railway_GeneralPage {
     //Locators
     private final By _txtUsername = By.xpath("//input[@id=\"username\"]");
     private final By _txtPassword = By.xpath("//input[@id=\"password\"]");
-    private final By _btnLogin = By.xpath("//div[@id=\"content\"]/form/fieldset/p/input[@type=\"submit\"]");
-    private final By _lblLoginErrorMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error LoginForm\"]");
+    private final By _btnLogin = By.xpath("//form//p[@class=\"form-actions\"]/input[@value=\"Login\"]");
+
 
     //elements
     public WebElement getTxtUsername(){
@@ -23,10 +23,6 @@ public class Railway_LoginPage extends Railway_GeneralPage {
     public WebElement getBtnLogin(){
         return Constant.WEBDRIVER.findElement(_btnLogin);
     }
-    public WebElement getLblLoginErrorMsg(){
-        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
-    }
-
     //Method
     public Railway_LoginPage login(String username, String password){
 
@@ -36,13 +32,16 @@ public class Railway_LoginPage extends Railway_GeneralPage {
 
         return new Railway_LoginPage();
     }
-    public Railway_LoginPage loginWrongPassword(String username, String password){
-        this.getTxtUsername().sendKeys(username);
+
+    public Railway_LoginPage loginWrongPassword(String username, String wpassword){
         for (int i=1; i<4; i++){
-            this.getTxtPassword().sendKeys(password);
+            this.getTxtUsername().sendKeys(username);
+            this.getTxtPassword().sendKeys(wpassword);
             this.getBtnLogin().click();
+
         }
-        return new Railway_LoginPage();
+        final Railway_LoginPage railway_loginPage = new Railway_LoginPage();
+        return railway_loginPage;
     }
 
 }

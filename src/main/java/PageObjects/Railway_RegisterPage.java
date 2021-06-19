@@ -3,10 +3,7 @@ import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-
-
 public class Railway_RegisterPage extends Railway_GeneralPage {
-
 
     //Locators
     private final By _txtEmail = By.xpath("//*[@id=\"email\"]");
@@ -14,10 +11,13 @@ public class Railway_RegisterPage extends Railway_GeneralPage {
     private final By _txtConfirmPassword = By.xpath("//*[@id=\"confirmPassword\"]");
     private final By _txtPID = By.xpath("//*[@id=\"pid\"]");
     private final By _btnRegister = By.xpath("//*[@id=\"RegisterForm\"]/fieldset/p/input");
-    //  register success // p[text()="You're here"]
+
+
 
     //elements
-    public WebElement getTxtEmail(){       return Constant.WEBDRIVER.findElement(_txtEmail);    }
+    public WebElement getTxtEmail(){
+        return Constant.WEBDRIVER.findElement(_txtEmail);
+    }
     public WebElement getTxtPassword(){
         return Constant.WEBDRIVER.findElement(_txtPassword);
     }
@@ -27,20 +27,20 @@ public class Railway_RegisterPage extends Railway_GeneralPage {
     public WebElement getTxtPID(){
         return Constant.WEBDRIVER.findElement(_txtPID);
     }
-    public WebElement getBtnRegisiter(){
+    public WebElement getBtnRegister(){
         return Constant.WEBDRIVER.findElement(_btnRegister);
     }
 
     //Method
-    /*public Railway_Register register(String email, String password, String confirmPassword, String pid){
+    public Railway_RegisterPage register(String email, String password, String confirmPassword, String pid){
 
         this.getTxtEmail().sendKeys(email);
         this.getTxtPassword().sendKeys(password);
         this.getTxtConfirmPassword().sendKeys(confirmPassword);
         this.getTxtPID().sendKeys(pid);
-        this.getBtnRegisiter().click();
+        this.getBtnRegister().click();
         //land on Home page
-        return new Railway_Register();
-    }*/
+        return new Railway_RegisterPage();
+    }
 
 }

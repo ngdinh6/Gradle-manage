@@ -5,15 +5,25 @@ import Constant.Constant;
 public class Railway_GeneralPage {
     //contains all UI and method, shared other pages
     //Locator
-    private final By tabLogin = By.xpath("//div[@id=\"menu\"]/ul/li[8]/a/span[text()=\"Login\"]");
-    private final By tabLogout = By.xpath("//div[@id = 'menu']//a[@href) = '/Account/Logout']");
+    private final By tabLogin = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Login\"]");
+    private final By tabLogout = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Log out\"]");
+    private final By tabRegister = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Register\"]");
+    private final By tabBookTicket = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Book ticket\"]");
+    private final By tabTicketPrice = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Ticket price\"]");
+    private final By tabTimetable = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Timetable\"]");
+    private final By tabContact = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Contact\"]");
+    private final By tabChangePassword = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"Change password\"]");
+    private final By tabMyTicket = By.xpath("//div[@id=\"menu\"]//a/span[text()=\"My ticket\"]");
+    private final By lblMyTicket = By.xpath("//div[@id=\"content\"]/h1[text()=\"Manage Tickets\"]");
     private final By lblWelcomeMessage = By.xpath("//div[@id=\"banner\"]/div/strong");
-    private final By tabRegister = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Register\"]");
-    private final By tabBookTicket = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Book ticket\"]");
-    private final By tabTicketPrice = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Ticket price\"]");
-    private final By tabTimetable = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Timetable\"]");
-    private final By tabContact = By.xpath("//*[@id=\"menu\"]//li//a//span[text()=\"Contact\"]");
-    private final By tabChangePassword = By.xpath("//ul/li[@class=\"selected\"]/a/span[text()=\"Change password\"]");
+    private final By lblLoginErrorMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error LoginForm\"]");
+    private final By lblLoginPage = By.xpath("//div[@id=\"content\"]/h1[text()=\"Login Page\"]");
+    private final By lblChangePasswordPage = By.xpath("///div[@id=\"content\"]/h1[text()=\"Change password\"]");
+    private final By lblRegisterSuccessMsg = By.xpath("//p[text()=\"You're here\"]");
+    private final By lblRegisterFailureMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error\"]");
+    private final By lblChangePasswordSuccessMsg = By.xpath("//form[@id=\"ChangePW\"]/fieldset//p[@class=\"message success\"]");
+    private final By lblErrorPasswordMsg = By.xpath("//form[@id=\"RegisterForm\"]/fieldset/ol/li[@class=\"password\"]/label[@class=\"validation-error\"]");
+    private final By lblErrorPidMsg = By.xpath("//form[@id=\"RegisterForm\"]/fieldset/ol/li[@class=\"pid-number\"]/label[@class=\"validation-error\"]");
     //Elements
     protected WebElement getTabLogin(){
         return Constant.WEBDRIVER.findElement(tabLogin);
@@ -24,8 +34,35 @@ public class Railway_GeneralPage {
     protected WebElement getlblWelcomeMessage(){
         return Constant.WEBDRIVER.findElement(lblWelcomeMessage);
     }
+    protected WebElement getLblErrorPasswordMsg(){
+        return Constant.WEBDRIVER.findElement(lblErrorPasswordMsg);
+    }
+    protected WebElement getLblErrorPidMsg(){
+        return Constant.WEBDRIVER.findElement(lblErrorPidMsg);
+    }
+    protected WebElement getLblLoginErrorMsg(){
+        return Constant.WEBDRIVER.findElement(lblLoginErrorMsg);
+    }
+    protected WebElement getLblRegisterFailureMsg(){
+        return Constant.WEBDRIVER.findElement(lblRegisterFailureMsg);
+    }
     protected WebElement getTabRegister(){
         return Constant.WEBDRIVER.findElement(tabRegister);
+    }
+    protected WebElement getLblRegisterSuccessMsg(){
+        return Constant.WEBDRIVER.findElement(lblRegisterSuccessMsg);
+    }
+    protected WebElement getLblChangePasswordSuccessMsg(){
+        return Constant.WEBDRIVER.findElement(lblChangePasswordSuccessMsg);
+    }
+    protected WebElement getLblLoginPage(){
+        return Constant.WEBDRIVER.findElement(lblLoginPage);
+    }
+    protected WebElement getTabMyTicket(){
+        return Constant.WEBDRIVER.findElement(tabMyTicket);
+    }
+    protected WebElement getLblMyTicket(){
+        return Constant.WEBDRIVER.findElement(lblMyTicket);
     }
     protected WebElement getTabBookTicket(){
         return Constant.WEBDRIVER.findElement(tabBookTicket);
@@ -42,14 +79,52 @@ public class Railway_GeneralPage {
     protected WebElement getTabChangePassword(){
         return Constant.WEBDRIVER.findElement(tabChangePassword);
     }
+    protected WebElement getLblChangePassword(){
+        return Constant.WEBDRIVER.findElement(lblChangePasswordPage);
+    }
     //Methods
+    public String getChangePassword(){
+        return this.getLblChangePassword().getText();
+    }
     public String getWelcomeMessage(){
         return this.getlblWelcomeMessage().getText();
     }
-
+    public String getErrorPasswordMsg(){
+        return this.getLblErrorPasswordMsg().getText();
+    }
+    public String getRegisterFailureMsg(){
+        return this.getLblRegisterFailureMsg().getText();
+    }
+    public String getLoginErrorMsg(){
+        return this.getLblLoginErrorMsg().getText();
+    }
+    public String getChangePasswordSuccessMsg(){
+        return this.getLblChangePasswordSuccessMsg().getText();
+    }
+    public String getErrorPidMsg(){
+        return this.getLblErrorPidMsg().getText();
+    }
+    public String getLoginPageTitle(){
+        return this.getLblLoginPage().getText();
+    }
+    public String getRegisterSuccessMsg(){
+        return this.getLblRegisterSuccessMsg().getText();
+    }
+    public String getMyTicket(){
+        return this.getLblMyTicket().getText();
+    }
     public Railway_LoginPage gotoLoginPage(){
         this.getTabLogin().click();
         return new Railway_LoginPage();
+    }
+    public Railway_MyTicketPage gotoMyTicketPage(){
+        this.getTabMyTicket().click();
+        return new Railway_MyTicketPage();
+    }
+
+    public Railway_LogoutPage gotoLogoutPage(){
+        this.getTabLogout().click();
+        return new Railway_LogoutPage();
     }
     public Railway_RegisterPage gotoRegisterPage(){
         this.getTabRegister().click();
