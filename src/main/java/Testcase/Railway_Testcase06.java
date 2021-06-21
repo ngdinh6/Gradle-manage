@@ -1,13 +1,7 @@
 package Testcase;
 
-import Constant.Constant;
-import PageObjects.Railway_HomePage;
-import PageObjects.Railway_LoginPage;
-import PageObjects.Railway_MyTicketPage;
-import org.testng.annotations.Test;
-
 public class Railway_Testcase06 extends Railway_BaseTest{
-    @Test
+    //@Test
     /*public void TC06(){
         System.out.println("TC 06 - Additional pages display once user logged in");
         Railway_HomePage homePage = new Railway_HomePage();
@@ -20,14 +14,13 @@ public class Railway_Testcase06 extends Railway_BaseTest{
         String expectedMsg = "";
         Assert.assertEquals(actualMsg, expectedMsg, "asdasdasdads");
     }*/
-    public void TC00(){
+    /*public void TC00(){
         System.out.println("TC Filter ticket");
         Railway_HomePage homePage = new Railway_HomePage();
         homePage.open();
         Railway_LoginPage loginPage = homePage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-
         Railway_MyTicketPage myticketPage = loginPage.gotoMyTicketPage();
-        myticketPage.filterTicket(Constant.DEPART_DATE);
-    }
+        myticketPage.filterTicket(1,1,"","Ignore");
+    }*/
 }

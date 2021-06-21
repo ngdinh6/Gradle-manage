@@ -24,15 +24,14 @@ public class Railway_GeneralPage {
     private final By lblChangePasswordSuccessMsg = By.xpath("//form[@id=\"ChangePW\"]/fieldset//p[@class=\"message success\"]");
     private final By lblErrorPasswordMsg = By.xpath("//form[@id=\"RegisterForm\"]/fieldset/ol/li[@class=\"password\"]/label[@class=\"validation-error\"]");
     private final By lblErrorPidMsg = By.xpath("//form[@id=\"RegisterForm\"]/fieldset/ol/li[@class=\"pid-number\"]/label[@class=\"validation-error\"]");
+    private final By lblBookTicketSuccessMsg = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket Booked Successfully!\"]");
     //Elements
-    protected WebElement getTabLogin(){
-        return Constant.WEBDRIVER.findElement(tabLogin);
-    }
-    protected WebElement getTabLogout(){
-        return Constant.WEBDRIVER.findElement(tabLogout);
-    }
+
     protected WebElement getlblWelcomeMessage(){
         return Constant.WEBDRIVER.findElement(lblWelcomeMessage);
+    }
+    protected WebElement getLblBookTicketSuccessMsg(){
+        return Constant.WEBDRIVER.findElement(lblBookTicketSuccessMsg);
     }
     protected WebElement getLblErrorPasswordMsg(){
         return Constant.WEBDRIVER.findElement(lblErrorPasswordMsg);
@@ -45,6 +44,12 @@ public class Railway_GeneralPage {
     }
     protected WebElement getLblRegisterFailureMsg(){
         return Constant.WEBDRIVER.findElement(lblRegisterFailureMsg);
+    }
+    protected WebElement getTabLogin(){
+        return Constant.WEBDRIVER.findElement(tabLogin);
+    }
+    protected WebElement getTabLogout(){
+        return Constant.WEBDRIVER.findElement(tabLogout);
     }
     protected WebElement getTabRegister(){
         return Constant.WEBDRIVER.findElement(tabRegister);
@@ -92,6 +97,9 @@ public class Railway_GeneralPage {
     public String getErrorPasswordMsg(){
         return this.getLblErrorPasswordMsg().getText();
     }
+    public String getBookTicketSuccessMsg(){
+        return this.getLblBookTicketSuccessMsg().getText();
+    }
     public String getRegisterFailureMsg(){
         return this.getLblRegisterFailureMsg().getText();
     }
@@ -121,7 +129,6 @@ public class Railway_GeneralPage {
         this.getTabMyTicket().click();
         return new Railway_MyTicketPage();
     }
-
     public Railway_LogoutPage gotoLogoutPage(){
         this.getTabLogout().click();
         return new Railway_LogoutPage();
@@ -146,6 +153,7 @@ public class Railway_GeneralPage {
         this.getTabChangePassword().click();
         return new Railway_ChangePasswordPage();
     }
+
 
 
 
