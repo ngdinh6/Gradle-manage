@@ -3,6 +3,7 @@ package testcase;
 import Constant.Constant;
 import PageObjects.Railway_HomePage;
 import PageObjects.Railway_LoginPage;
+import logs.Log;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class TC_01 extends BaseTest {
 
     @Test
     public void TC01() {
-        System.out.println("TC 01 - User can log into Railway with valid username and passowrd");
+        Log.info("TC 01 - User can log into Railway with valid username and passowrd");
         //System.out.println("1. Navigate to QA Railway Website");
         Railway_HomePage homePage = new Railway_HomePage();
         homePage.open();
