@@ -1,4 +1,5 @@
 package PageObjects;
+
 import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,26 +14,29 @@ public class Railway_RegisterPage extends Railway_GeneralPage {
     private final By _btnRegister = By.xpath("//*[@id=\"RegisterForm\"]/fieldset/p/input");
 
 
-
     //elements
-    public WebElement getTxtEmail(){
+    public WebElement getTxtEmail() {
         return Constant.WEBDRIVER.findElement(_txtEmail);
     }
-    public WebElement getTxtPassword(){
+
+    public WebElement getTxtPassword() {
         return Constant.WEBDRIVER.findElement(_txtPassword);
     }
-    public WebElement getTxtConfirmPassword(){
+
+    public WebElement getTxtConfirmPassword() {
         return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
     }
-    public WebElement getTxtPID(){
+
+    public WebElement getTxtPID() {
         return Constant.WEBDRIVER.findElement(_txtPID);
     }
-    public WebElement getBtnRegister(){
+
+    public WebElement getBtnRegister() {
         return Constant.WEBDRIVER.findElement(_btnRegister);
     }
 
     //Method
-    public Railway_RegisterPage register(String email, String password, String confirmPassword, String pid){
+    public Railway_RegisterPage register(String email, String password, String confirmPassword, String pid) {
 
         this.getTxtEmail().sendKeys(email);
         this.getTxtPassword().sendKeys(password);

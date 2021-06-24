@@ -52,19 +52,33 @@ public class Railway_BookticketPage extends Railway_GeneralPage {
     public String getAmountTicketInfo(){
         return this.getLblAmountTicket().getText();
     }
-    public Railway_BookticketPage bookTicket(String departDate, int departStation, int arriveStation, String seatType, String amount ){
+    public String getSelectedDeparStation(){
+        return Constant.WEBDRIVER.findElement(By.xpath("//div[@align]//fieldset/ol/li[2]/select[@name='DepartStation']/option[@selected='selected']")).getText();
+    }
+    public String getSelectedArriveStation(){
+        return Constant.WEBDRIVER.findElement(By.xpath("//span[@id=\"ArriveStation\"]/select/option[@selected='selected']")).getText();
+    }
+    public Railway_BookticketPage bookTicket(String departDate, String departStation, String arriveStation, String seatType, String amount ){
 
         Select drpDepartDate = new Select(Constant.WEBDRIVER.findElement(_selectDepartDate));
         drpDepartDate.selectByVisibleText(departDate);
         Select drpDepartStation = new Select(Constant.WEBDRIVER.findElement(_selectDepartStation));
-        drpDepartStation.selectByIndex(departStation);
+        drpDepartStation.selectByVisibleText(departStation);
+        //drpDepartStation.getFirstSelectedOption().getText();
         Select drpArriveStation = new Select(Constant.WEBDRIVER.findElement(_selectArriveStation));
-        drpArriveStation.selectByIndex(arriveStation);
+        drpArriveStation.selectByVisibleText(arriveStation);
         Select drpSeatType = new Select(Constant.WEBDRIVER.findElement(_selectSeatType));
         drpSeatType.selectByVisibleText(seatType);
         Select drpTicketAmount = new Select(Constant.WEBDRIVER.findElement(_selectTicketAmount));
         drpTicketAmount.selectByVisibleText(amount);
         this.getBtnSubmitBookTicket().click();
         return new Railway_BookticketPage();
+    }
+    public void getSelectedOption(){
+        Select drpDepartStation = new Select(Constant.WEBDRIVER.findElement(_selectDepartStation));
+        String selectedDepart = drpDepartStation.getFirstSelectedOption().getText();
+        Select drpArriveStation = new Select(Constant.WEBDRIVER.findElement(_selectArriveStation));
+        String selectedArrive = drpDepartStation.getFirstSelectedOption().getText();
+
     }
 }

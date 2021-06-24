@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+
+    <test verbose="2" preserve-order="true" name="Railway test">
+
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcase.TC_01"/>
+            <class name="testcase.TC_02"/>
+            <class name="testcase.TC_03"/>
+            <class name="testcase.TC_04"/>
+            <class name="testcase.TC_05"/>
+            <class name="testcase.TC_06"/>
+            <class name="testcase.TC_07"/>
+            <class name="testcase.TC_09"/>
+            <class name="testcase.TC_10"/>
+            <class name="testcase.TC_11"/>
+            <class name="testcase.TC_14"/>
+            <class name="testcase.TC_15"/>
+            <class name="testcase.TC_16"/>
+        </classes>
+    </test>
+</suite>

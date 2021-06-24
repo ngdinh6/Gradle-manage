@@ -12,22 +12,26 @@ public class Railway_ChangePasswordPage extends Railway_GeneralPage {
     private final By _txtNewPassword = By.xpath("//input[@id=\"newPassword\"]");
     private final By _txtConfirmNewPassword = By.xpath("//input[@id=\"confirmPassword\"]");
     private final By _btnChangePassword = By.xpath("//input[@value=\"Change Password\"]");
+
     //elements
-    public WebElement getTxtCurrentPass(){
+    public WebElement getTxtCurrentPass() {
         return Constant.WEBDRIVER.findElement(_txtCurrentPass);
     }
-    public WebElement getTxtNewPassword(){
+
+    public WebElement getTxtNewPassword() {
         return Constant.WEBDRIVER.findElement(_txtNewPassword);
     }
-    public WebElement getTxtConfirmNewPassword(){
+
+    public WebElement getTxtConfirmNewPassword() {
         return Constant.WEBDRIVER.findElement(_txtConfirmNewPassword);
     }
-    public WebElement getBtnChangePassword(){
+
+    public WebElement getBtnChangePassword() {
         return Constant.WEBDRIVER.findElement(_btnChangePassword);
     }
 
     //Method
-    public Railway_ChangePasswordPage changePassword(String currentPassword, String newPassword, String confirmNewPassword){
+    public Railway_ChangePasswordPage changePassword(String currentPassword, String newPassword, String confirmNewPassword) {
 
         this.getTxtCurrentPass().sendKeys(currentPassword);
         this.getTxtNewPassword().sendKeys(newPassword);
