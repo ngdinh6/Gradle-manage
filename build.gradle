@@ -14,15 +14,17 @@ dependencies {
     implementation 'org.testng:testng:7.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.3.1'
+    implementation 'com.aventstack:extentreports:3.1.5'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.141.59'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '3.141.59'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-edge-driver', version: '3.141.59'
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
     compile group: 'org.testng', name: 'testng', version: '7.1.0'
     compileJava.options.encoding = "UTF-8"
     compileTestJava.options.encoding = "UTF-8"
+    implementation 'org.apache.logging.log4j:log4j-api:2.14.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+
+    implementation 'com.relevantcodes:extentreports:2.41.2'
 }
 
 test {

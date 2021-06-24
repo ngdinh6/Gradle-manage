@@ -19,14 +19,16 @@ public class TC_15 extends BaseTest {
         Railway_HomePage homePage = new Railway_HomePage();
         homePage.open();
         Railway_LoginPage loginPage = homePage.gotoLoginPage();
+        JavascriptExecutor jse = (JavascriptExecutor) WEBDRIVER;
+        jse.executeScript("window.scrollBy(0,550)");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         Railway_TimetablePage timetablePage = loginPage.gotoTimetablePage();
         //navigate to bookticket page
         timetablePage.navigateToBookTicketPage("Huế", "Sài Gòn");
-        JavascriptExecutor jse = (JavascriptExecutor) WEBDRIVER;
-        jse.executeScript("window.scrollBy(0,550)");
+
         Select drpDepartStation = new Select(Constant.WEBDRIVER.findElement(By.xpath("//div[@id=\"content\"]//form/fieldset/ol/li/select[@name=\"DepartStation\"]")));
         String selectedDepart = drpDepartStation.getFirstSelectedOption().getText();
+
         Select drpArriveStation = new Select(Constant.WEBDRIVER.findElement(By.xpath("//span[@id=\"ArriveStation\"]/select[@name=\"ArriveStation\"]")));
         String selectedArrive = drpArriveStation.getFirstSelectedOption().getText();
         String actualMsg = selectedDepart + selectedArrive;

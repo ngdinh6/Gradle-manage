@@ -20,7 +20,7 @@ public class Railway_GeneralPage {
     private final By lblLoginErrorMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error LoginForm\"]");
     private final By lblLoginPage = By.xpath("//div[@id=\"content\"]/h1[text()=\"Login Page\"]");
     private final By lblChangePasswordPage = By.xpath("//div[@id=\"menu\"]/ul/li[8]/a/span[text()=\"Change password\"]");
-    private final By lblRegisterSuccessMsg = By.xpath("//p[text()=\"You're here\"]");
+    private final By lblRegisterSuccessMsg = By.xpath("//div[@id=\"content\"]/p");
     private final By lblRegisterFailureMsg = By.xpath("//div[@id=\"content\"]/p[@class=\"message error\"]");
     private final By lblChangePasswordSuccessMsg = By.xpath("//form[@id=\"ChangePW\"]/fieldset//p[@class=\"message success\"]");
     private final By lblErrorPasswordMsg = By.xpath("//form[@id=\"RegisterForm\"]/fieldset/ol/li[@class=\"password\"]/label[@class=\"validation-error\"]");

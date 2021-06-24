@@ -6,7 +6,7 @@
 
     <test verbose="2" preserve-order="true" name="Railway test">
 
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="testcase.TC_01"/>
             <class name="testcase.TC_02"/>

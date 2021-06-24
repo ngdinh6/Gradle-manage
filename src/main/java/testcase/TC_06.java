@@ -1,20 +1,22 @@
 package testcase;
 
-import PageObjects.Railway_ChangePasswordPage;
-import PageObjects.Railway_HomePage;
-import PageObjects.Railway_LoginPage;
-import PageObjects.Railway_MyTicketPage;
-import PageObjects.Railway_GeneralPage;
+import Constant.Constant;
+import PageObjects.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Constant.Constant;
+
+import static Constant.Constant.WEBDRIVER;
+
 public class TC_06 extends BaseTest {
     @Test
-    public void TC06(){
+    public void TC06() {
         System.out.println("TC 06 - Additional pages display once user logged in");
         Railway_HomePage homePage = new Railway_HomePage();
         homePage.open();
         Railway_LoginPage loginPage = homePage.gotoLoginPage();
+        JavascriptExecutor jse = (JavascriptExecutor) WEBDRIVER;
+        jse.executeScript("window.scrollBy(0,550)");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         Railway_MyTicketPage myticketPage = loginPage.gotoMyTicketPage();
         Railway_ChangePasswordPage changePasswordPage = myticketPage.gotoChangePasswordPage();
