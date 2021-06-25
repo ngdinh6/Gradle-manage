@@ -3,13 +3,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
-    <listeners>
-        <listener class-name="listeners.TestListener"/>
-        <listener class-name="listeners.AnnotationTransformer"/>
-    </listeners>
     <test verbose="2" preserve-order="true" name="Railway test">
 
-        <parameter name="browserName" value="charts"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="testcase.TC_01"/>
             <class name="testcase.TC_02"/>
