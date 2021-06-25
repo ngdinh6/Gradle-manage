@@ -24,6 +24,6 @@ public class TC_02 extends BaseTest {
         jse.executeScript("window.scrollBy(0,550)");
         String actualMsg = loginPage.login("", Constant.PASSWORD).getLoginErrorMsg();
         String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
-        Assert.assertEquals(actualMsg, expectedMsg, "There was a problem with your login and/or errors exist in your form. ");
+        Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected ");
     }
 }

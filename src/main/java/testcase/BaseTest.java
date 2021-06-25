@@ -8,10 +8,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+
 public class BaseTest {
     @Parameters("browserName")
     @BeforeMethod
-    public void setUp( String browserName) throws Exception {
+    public void setUp(String browserName) throws Exception {
 
         System.out.println("browser: " + browserName);
         if (browserName.equalsIgnoreCase("edge")) {

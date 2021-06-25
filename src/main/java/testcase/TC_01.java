@@ -15,15 +15,15 @@ public class TC_01 extends BaseTest {
     @Test
     public void TC01() {
         System.out.println("TC 01 - User can log into Railway with valid username and password");
-        //1. Navigate to QA Railway Website
+        System.out.println("1. Navigate to QA Railway Website");
         Railway_HomePage homePage = new Railway_HomePage();
         homePage.open();
-        //2. Click on Login tab
+        System.out.println("2. Click on Login tab");
         Railway_LoginPage loginPage = homePage.gotoLoginPage();
         JavascriptExecutor jse = (JavascriptExecutor) WEBDRIVER;
         jse.executeScript("window.scrollBy(0,550)");
-        //3. Enter valid Email and Password
-        //4. Click on "Login" button
+        System.out.println("3. Enter valid Email and Password");
+        System.out.println("4. Click on 'Login' button");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         String actualMsg = loginPage.getWelcomeMessage();
         String expectedMsg = "Welcome " + Constant.USERNAME;

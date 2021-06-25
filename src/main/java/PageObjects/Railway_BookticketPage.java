@@ -1,4 +1,5 @@
 package PageObjects;
+
 import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,48 +18,62 @@ public class Railway_BookticketPage extends Railway_GeneralPage {
     private final By _lblSeatType = By.xpath("//div[@id=\"content\"]//table//tr[@class=\"OddRow\"]/td[3]");
     private final By _lblDepartDate = By.xpath("//div[@id=\"content\"]//table//tr[@class=\"OddRow\"]/td[4]");
     private final By _lblAmountTicket = By.xpath("//div[@id=\"content\"]//table//tr[@class=\"OddRow\"]/td[7]");
+
     //elements
-    public WebElement getLblDepartStation(){
+    public WebElement getLblDepartStation() {
         return Constant.WEBDRIVER.findElement(_lblDepartStation);
     }
-    public WebElement getLblArriveStation(){
+
+    public WebElement getLblArriveStation() {
         return Constant.WEBDRIVER.findElement(_lblArriveStation);
     }
-    public WebElement getLblSeatType(){
+
+    public WebElement getLblSeatType() {
         return Constant.WEBDRIVER.findElement(_lblSeatType);
     }
-    public WebElement getLblDepartDate(){
+
+    public WebElement getLblDepartDate() {
         return Constant.WEBDRIVER.findElement(_lblDepartDate);
     }
-    public WebElement getLblAmountTicket(){
+
+    public WebElement getLblAmountTicket() {
         return Constant.WEBDRIVER.findElement(_lblAmountTicket);
     }
-    public WebElement getBtnSubmitBookTicket(){
+
+    public WebElement getBtnSubmitBookTicket() {
         return Constant.WEBDRIVER.findElement(_btnSubmitBookTicket);
     }
+
     //Method
-    public String getDepartStationInfo(){
+    public String getDepartStationInfo() {
         return this.getLblDepartStation().getText();
     }
-    public String getArriveStationInfo(){
+
+    public String getArriveStationInfo() {
         return this.getLblArriveStation().getText();
     }
-    public String getSeatTypeInfo(){
+
+    public String getSeatTypeInfo() {
         return this.getLblSeatType().getText();
     }
-    public String getDepartDateInfo(){
+
+    public String getDepartDateInfo() {
         return this.getLblDepartDate().getText();
     }
-    public String getAmountTicketInfo(){
+
+    public String getAmountTicketInfo() {
         return this.getLblAmountTicket().getText();
     }
-    public String getSelectedDeparStation(){
+
+    public String getSelectedDeparStation() {
         return Constant.WEBDRIVER.findElement(By.xpath("//div[@align]//fieldset/ol/li[2]/select[@name='DepartStation']/option[@selected='selected']")).getText();
     }
-    public String getSelectedArriveStation(){
+
+    public String getSelectedArriveStation() {
         return Constant.WEBDRIVER.findElement(By.xpath("//span[@id=\"ArriveStation\"]/select/option[@selected='selected']")).getText();
     }
-    public Railway_BookticketPage bookTicket(String departDate, String departStation, String arriveStation, String seatType, String amount ){
+
+    public Railway_BookticketPage bookTicket(String departDate, String departStation, String arriveStation, String seatType, String amount) {
 
         Select drpDepartDate = new Select(Constant.WEBDRIVER.findElement(_selectDepartDate));
         drpDepartDate.selectByVisibleText(departDate);
@@ -74,7 +89,8 @@ public class Railway_BookticketPage extends Railway_GeneralPage {
         this.getBtnSubmitBookTicket().click();
         return new Railway_BookticketPage();
     }
-    public void getSelectedOption(){
+
+    public void getSelectedOption() {
         Select drpDepartStation = new Select(Constant.WEBDRIVER.findElement(_selectDepartStation));
         String selectedDepart = drpDepartStation.getFirstSelectedOption().getText();
         Select drpArriveStation = new Select(Constant.WEBDRIVER.findElement(_selectArriveStation));
